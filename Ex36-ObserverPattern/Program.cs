@@ -24,10 +24,8 @@ namespace Ex36_ObserverPattern
 
             p.Detach(s2);
 
-            p.Message = "Så er der fredagsbar!";
-       
+            p.Message = "Så er der fredagsbar!";     
          
         }
-
     }
 }

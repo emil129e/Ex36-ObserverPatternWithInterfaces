@@ -26,6 +26,7 @@ namespace Ex36_ObserverPattern
         {            
             this.academy = academy;           
         }
+
         public void Update()
         {
             _message = ((Academy)academy).Message;

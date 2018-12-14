@@ -8,9 +8,11 @@ using System.Threading.Tasks;
 
 namespace Ex36_ObserverPattern
 {
+    public delegate void NotifyHandler();
+
     public class Academy : Organization, IAcademy
     {
-        private List<IStudent> students = new List<IStudent>();
+        private NotifyHandler students;
         private string _message;
         public string Message
         {
@@ -27,27 +29,22 @@ namespace Ex36_ObserverPattern
 
         public Academy(string name, string adress) : base(name)
         {
+
         }
 
         public void Attach(IStudent s)
         {
-            students.Add(s);
+            students += s.Update;   
         }
 
-        public void Detach(IStudent s)
+        public void Detach(Student s)
         {
-            students.Remove(s);
+            students -= s.Update;
         }
 
         public void Notify()
         {
-
-            foreach (IStudent student in students)
-            {
-                student.Update();
-
-            }
+            students();   
         }
-
     }
 }
