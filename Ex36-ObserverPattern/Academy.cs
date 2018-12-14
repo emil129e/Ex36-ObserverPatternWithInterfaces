@@ -37,7 +37,7 @@ namespace Ex36_ObserverPattern
             students += s.Update;   
         }
 
-        public void Detach(Student s)
+        public void Detach(IStudent s)
         {
             students -= s.Update;
         }
